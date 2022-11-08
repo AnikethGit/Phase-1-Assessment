@@ -7,48 +7,61 @@ public class Application {
 
 	Scanner s = new Scanner(System.in);
 	FileAccess dao = new FileAccess();
+	String path = "C:\\Users\\anike\\Desktop\\New folder";
 
-	public void introDisp() {
+	public void introDisp() // To display the Application and Developer Information
+	{
 
 		System.out.println();
-		System.out.println("-------Welcome to LockedMe.Com-------");
+		System.out.println("-------Welcome to LockedMe.com-------");
 		System.out.println();
-		System.out.println("Application developed by Aniketh Sahu");
+		System.out.println("Application developed by Aniketh Sahu.");
 		System.out.println();
 
 	}
 
-	public void exitDisp() {
+	public void exitDisp() // To display the termination text
+	{
 
 		System.out.println();
 		System.out.println("Application closed successfully.");
 		System.out.println();
 	}
 
-	public void mainMenu() {
+	public void mainMenu() // To display the main menu items i.e. first set of selections
+	{
 
-		System.out.println("               Main Menu               ");
+		System.out.println("          -----MAIN MENU-----          ");
 		System.out.println();
-		System.out.println("Choose from the desired operation to be performed:");
+		System.out.println("-> Choose from the desired operation to be performed:");
+		System.out.println();
 		System.out.println("1.View All The Products");
 		System.out.println("2.More Options");
 		System.out.println("3.Exit The Application");
+		System.out.println();
+		System.out.println("Enter your choice:");
+		System.out.println();
 
 	}
 
-	public void subMenu() {
+	public void subMenu() // To display the sub-menu items i.e. second set of selections
+	{
 
-		System.out.println("               Sub Menu               ");
+		System.out.println("          -----SUB MENU-----          ");
 		System.out.println();
-		System.out.println("Choose from the following options:");
+		System.out.println("-> Choose from the following options:");
+		System.out.println();
 		System.out.println("1.Add a file");
 		System.out.println("2.Delete a file");
 		System.out.println("3.Search a file");
 		System.out.println("4.Go to the main menu");
 		System.out.println();
+		System.out.println("Enter your choice:");
+		System.out.println();
 	}
 
-	public void mainMenuOp() {
+	public void mainMenuOp() // To perform the main menu operations
+	{
 
 		int choice = 0;
 		char choice1 = 0;
@@ -57,7 +70,6 @@ public class Application {
 			mainMenu();
 
 			try {
-
 				choice = Integer.parseInt(s.nextLine());
 			}
 
@@ -70,11 +82,10 @@ public class Application {
 
 			switch (choice) {
 
-			case 1:
+			case 1: // To list all the contents of the user specified file
 				System.out.println();
-
 				try {
-					dao.listAllFiles(Main.path);
+					dao.listAllFiles(path);
 				}
 
 				catch (NullPointerException e) {
@@ -89,17 +100,17 @@ public class Application {
 					System.out.println(e.getMessage());
 				}
 
-				System.out.println("\n***********************************\n");
+				System.out.println("\n----------------------------------\n");
 
 				break;
 
-			case 2:
+			case 2: // To display the sub-menu options
 
 				System.out.println();
 				subMenuOp();
 				break;
 
-			case 3:
+			case 3: // To exit the program
 
 				System.out.println("\n Are you sure you want to exit ? ");
 				System.out.println("  (Y) ==> Yes    (N) ==> No        ");
@@ -122,7 +133,7 @@ public class Application {
 
 			default:
 				System.out.println("\nInvalid Input \nValid Input Integers:(1-3)\n");
-				mainMenu();
+				mainMenuOp();
 
 			}
 
@@ -132,7 +143,8 @@ public class Application {
 
 	}
 
-	public void subMenuOp() {
+	public void subMenuOp() // To perform the sub-menu operations
+	{
 
 		String file = null;
 		String fileName = null;
@@ -153,13 +165,13 @@ public class Application {
 
 			switch (choice) {
 
-			case 1:
-				System.out.println("\n==> Adding a File...");
-				System.out.println("Please enter a file name : ");
+			case 1: // Adding a file
+				System.out.println("\nTo add a File");
+				System.out.println("Please enter the file name to be added : ");
 				file = s.nextLine();
 				fileName = file.trim();
 				try {
-					dao.createNewFile(Main.path, fileName);
+					dao.createNewFile(path, fileName);
 				}
 
 				catch (NullPointerException e) {
@@ -176,16 +188,16 @@ public class Application {
 					System.out.println("Please try again...");
 				}
 
-				System.out.println("\n**********************************\n");
+				System.out.println("\n---------------------------------\n");
 				break;
 
-			case 2:
-				System.out.println("\n==> Deleting a File...");
-				System.out.println("Please enter a file name to Delete : ");
+			case 2: // Deleting a file
+				System.out.println("\nTo delete a File");
+				System.out.println("Please enter the file name to be deleted : ");
 				file = s.nextLine();
 				fileName = file.trim();
 				try {
-					dao.deleteFile(Main.path, fileName);
+					dao.deleteFile(path, fileName);
 				}
 
 				catch (NullPointerException e) {
@@ -202,16 +214,16 @@ public class Application {
 					System.out.println("Please try again...");
 				}
 
-				System.out.println("\n***********************************\n");
+				System.out.println("\n---------------------------------\n");
 				break;
 
-			case 3:
-				System.out.println("\n==> Searching a File...");
-				System.out.println("Please enter a file name to Search : ");
+			case 3: // Searching a file
+				System.out.println("\nTo search a File");
+				System.out.println("Please enter the file name to be searched : ");
 				file = s.nextLine();
 				fileName = file.trim();
 				try {
-					dao.searchFile(Main.path, fileName);
+					dao.searchFile(path, fileName);
 				}
 
 				catch (NullPointerException e) {
@@ -225,10 +237,10 @@ public class Application {
 				catch (Exception e) {
 					System.out.println(e.getMessage());
 				}
-				System.out.println("\n***********************************\n");
+				System.out.println("\n---------------------------------\n");
 				break;
 
-			case 4:
+			case 4: // To show the main menu options
 				mainMenuOp();
 				break;
 
