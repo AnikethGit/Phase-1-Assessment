@@ -40,5 +40,8 @@
     <br>
     <p align="center"><span><strong>Coming Soon</strong></span></p><br>
 </div>
+<div class="footer" align="center">
+    FlyAway by Aniketh Sahu
+</div>
 </body>
 </html>
