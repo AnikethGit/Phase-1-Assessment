@@ -3,8 +3,8 @@
 A small shopping app demo project in JAVA.
 ## Using the Application
 - The app is executed using spring boot and the database chosen is h2-based.
-- The client can send and recieve data using an api.
-- Admin can log in using the registered usenae and password.
+- The client can send and receive data using an API.
+- Admin can log in using the registered username and password.
 ## Technologies Used
 + Backend - JAVA
 + Database - H2
