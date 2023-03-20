@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 After Downloading this Repository, please go through the following steps:</br>
 
 **Initilization Steps:**</br>
-Include 'node_modules' folder of Angular in *A-Mart* </br>
+Include 'node_modules' folder of Angular in *A-Mart*. </br>
 
 **Execution Steps:**</br>
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
