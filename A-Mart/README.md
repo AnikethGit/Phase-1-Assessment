@@ -30,13 +30,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## Instructions to follow:
-After Downloading this Repository, please go through the following steps:</br>
-
-**Initilization Steps:**</br>
-Include 'node_modules' folder of Angular in *ota* </br>
-
-**Execution Steps:**</br>
-Run `ng serve` or `ng serve --o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
