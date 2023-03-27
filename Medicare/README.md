@@ -19,3 +19,7 @@ Download or clone the content of repository, then follow the instruction given b
 - The web application is now ready to use in http://localhost:4200/
 
 Admin Details: Username: admin@medicare.com Password: admin12345
+
+## IDE Used:
+- Visual Studio Code
+- Spring Tool Suite
