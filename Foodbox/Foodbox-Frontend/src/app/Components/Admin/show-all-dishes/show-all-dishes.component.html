@@ -1,0 +1,93 @@
+<br>
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" routerLink="/get/all/foods" (click)="onClick()"> All Dishes</a>
+        <div class="dropdown dropright">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                Filter by
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="getDishByCuisine('Indian')">Indian</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Chinese')">Chinese</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Continental')">Continental</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Italian')">Italian</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Fusion')">Fusion</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Dessert')">Dessert</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Mughlai')">Mughlai</a>
+                <a class="dropdown-item" (click)="getDishByCuisine('Quick Bites')">Quick Bites</a>
+            </div>
+        </div>
+        <ul class="navbar-nav ml-auto mx-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Sort by
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" role="button" (click)="sortByPriceLowToHigh()">Price: Low To High</a>
+                    <a class="dropdown-item" role="button" (click)="sortByPriceHighToLow()">Price: High To Low</a>
+                    <a class="dropdown-item" role="button" (click)="sortByNameAscending()">Name: A-Z</a>
+                    <a class="dropdown-item" role="button" (click)="sortByNameDescending()">Name: Z-A</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline" (ngSubmit)="getDishByName()">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="foodName"
+                name="foodName">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </nav>
+    <div class="table-responsive">
+        <table class="table table-light table-bordered table-hover">
+            <thead class="thead-light text-center">
+                <tr>
+                    <th>Food Image</th>
+                    <th>Food Name</th>
+                    <th>Course</th>
+                    <th>Cuisine</th>
+                    <th>Category</th>
+                    <th>Price(in &#8377;)</th>
+                    <th>Total Stock</th>
+                    <th>Action</th>
+                    <th>Activate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of dish | paginate : 
+                                                {
+                                                    itemsPerPage: tableSize,
+                                                    currentPage: page,
+                                                    totalItems: count
+                                                }">
+                    <td>
+                        <img class="img-thumbnail" width="250" height="250" [src]="d.img">
+                    </td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.course}}</td>
+                    <td>{{d.cuisine}}</td>
+                    <td>{{d.salt}}</td>
+                    <td>&#8377; {{d.price}}</td>
+                    <td>{{d.totalAvailable}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline-success"
+                                (click)="updateDish(d.did)">Update</button>
+                            <button type="button" class="btn btn-outline-danger"
+                                (click)="deleteDish(d.did)">Delete</button>
+                        </div>
+                    </td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" name="available" [(ngModel)]="d.available"
+                                (change)="onActivate(d.did,d)">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+    </div>
+</div>

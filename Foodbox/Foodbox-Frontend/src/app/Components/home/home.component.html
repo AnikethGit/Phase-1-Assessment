@@ -1,0 +1,199 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto"><br>
+            <h4>What are you looking for?</h4><br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><img
+                            src="assets/Images/search-icon.png" alt=""></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search for food, desserts and more..."
+                    [(ngModel)]="name" (keydown.enter)="onSearch(name)">
+            </div>
+        </div>
+    </div>
+</div><br>
+<div class="container" style="border-style: double; background-color:
+    currentColor ;">
+    <div id="img" class="carousel slide bg-dark" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+            <li data-target="#img" data-slide-to="0" class="active"></li>
+            <li data-target="#img" data-slide-to="1"></li>
+            <li data-target="#img" data-slide-to="2"></li>
+            <li data-target="#img" data-slide-to="3"></li>
+        </ul>
+
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/Images/pic1.jpg" alt="pic1.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/Images/pic2.jpg" alt="pic2.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/Images/pic3.jpeg" alt="pic3.jpeg">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/Images/pic4.jpg" alt="pic4.jpg">
+            </div>
+        </div>
+
+
+        <a class="carousel-control-prev" href="#img" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#img" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div></div><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h3 class="ml-4 pl-5">Browse foods & desserts</h3>
+            <br>
+            <h5 class="ml-4 pl-5">By Cuisines</h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col mb-5">
+            <div id="product" class="carousel slide" data-ride="carousel"
+                data-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card-deck col-11 mx-auto">
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/indian.jpg"
+                                    alt="cardiac.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[0]}}">Indian</a>
+                                </div>
+                            </div>
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/chinese.jpg"
+                                    alt="diabetic.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[1]}}">Chinese</a>
+                                </div>
+                            </div>
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/continental.jpg"
+                                    alt="gastro.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[2]}}">Continental</a>
+                                </div>
+                            </div>
+
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/italian.jpg"
+                                    alt="urology.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[3]}}">Italian</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-deck col-11 mx-auto">
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/fusion.jpeg" alt="ai.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[4]}}">Fusion Food</a>
+                                </div>
+                            </div>
+
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/dessert.jpg"
+                                    alt="gynaecology.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[5]}}">Dessert</a>
+                                </div>
+                            </div>
+
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/mughlai.jpg"
+                                    alt="ortho.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[6]}}">Mughlai</a>
+                                </div>
+                            </div>
+
+                            <div class="card bg-dark">
+                                <img class="card-img-top"
+                                    src="assets/Images/fast-food.jpg"
+                                    alt="vitamins.png"
+                                    style="width:100%; height:100%;
+                                    border-style: groove;">
+
+                                <div class="card-body text-center mt-1">
+                                    <a
+                                        style="color: whitesmoke;"
+                                        routerLink="/show/dish/class/{{food[7]}}">Quick
+                                        Bites</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#product"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#product"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
